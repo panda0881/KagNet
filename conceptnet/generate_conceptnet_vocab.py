@@ -2,7 +2,7 @@ from tqdm import tqdm
 
 
 all_words = list()
-with open('conceptnet-assertions-5.6.0.csv.en', 'r') as f:
+with open('conceptnet-assertions-5.6.0.csv.en', 'r', encoding='utf-8') as f:
     for line in f:
         words = line.split('\t')
         tmp_r = words[0]
@@ -15,7 +15,7 @@ with open('conceptnet-assertions-5.6.0.csv.en', 'r') as f:
 
 all_words = list(set(all_words))
 
-with open('concept.txt', 'w') as f:
+with open('concept.txt', 'w', encoding='utf-8') as f:
     for w in tqdm(all_words):
         f.write(w)
         f.write('\n')
