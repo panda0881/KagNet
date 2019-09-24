@@ -162,7 +162,7 @@ def process(filename, batch_id=-1):
 load_resources()
 load_cpnet()
 # print(sys.argv[2])
-process(sys.argv[1], sys.argv[2])
+process(sys.argv[1], int(sys.argv[2]))
 # find_paths("fill", "fountain_pen", ifprint=True)
 # print("--------")
 # find_paths("write", "fountain_pen", ifprint=True)
