@@ -5,10 +5,10 @@ import tensorflow as tf
 import json
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('opt_method', help='SGD/Adagrad/...')
-parser.add_argument('pretrain', help='0/1', type=int)
-args = parser.parse_args()
+# parser = argparse.ArgumentParser()
+# parser.add_argument('opt_method', help='SGD/Adagrad/...')
+# parser.add_argument('pretrain', help='0/1', type=int)
+# args = parser.parse_args()
 
 
 def init_predict(hs, ts, rs):
