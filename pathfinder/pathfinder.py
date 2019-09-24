@@ -161,6 +161,7 @@ def process(filename, batch_id=-1):
 
 load_resources()
 load_cpnet()
+print(sys.argv[2])
 # find_paths("fill", "fountain_pen", ifprint=True)
 # print("--------")
 # find_paths("write", "fountain_pen", ifprint=True)
@@ -168,7 +169,7 @@ load_cpnet()
 # find_paths("write", "pen", ifprint=True)
 # find_paths("bottle", "liquor", ifprint=True)
 
-print();print();print();print();print();
+# print();print();print();print();print();
 
 
 # find_paths("cashier", "store", ifprint=True)
