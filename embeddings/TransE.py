@@ -66,14 +66,8 @@ def init_predict(hs, ts, rs):
 
 def run():
 
-    opt_method = args.opt_method
-    int_pretrain = args.pretrain
-    if int_pretrain == 1:
-        pretrain = True
-    elif int_pretrain == 0:
-        pretrain = False
-    else:
-        raise ValueError('arg "pretrain" must be 0 or 1')
+    opt_method = 'SGD'
+    pretrain = True
 
 
     # Download and preprocess ConcepNet
