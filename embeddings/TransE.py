@@ -67,7 +67,7 @@ def init_predict(hs, ts, rs):
 def run():
 
     opt_method = 'SGD'
-    pretrain = False
+    pretrain = True
 
 
     # Download and preprocess ConcepNet
