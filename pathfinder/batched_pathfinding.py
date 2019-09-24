@@ -11,17 +11,25 @@ NUM_BATCHES = 100
 
 def generate_bash():
     PATH = sys.argv[2]
-    with open("cmd_lucy.sh", 'w') as f:
-        for i in range(0,50):
+    with open("cmd_1.sh", 'w') as f:
+        for i in range(0,20):
+            f.write("CUDA_VISIBLE_DEVICES=NONE python pathfinder.py %s %d &\n" % (PATH, i))
+        f.write('wait')
+    with open("cmd_2.sh", 'w') as f:
+        for i in range(20,40):
+            f.write("CUDA_VISIBLE_DEVICES=NONE python pathfinder.py %s %d &\n" % (PATH, i))
+        f.write('wait')
+    with open("cmd_3.sh", 'w') as f:
+        for i in range(40,60):
             f.write("CUDA_VISIBLE_DEVICES=NONE python pathfinder.py %s %d &\n" % (PATH, i))
         f.write('wait')
 
-    with open("cmd_ron.sh", 'w') as f:
-        for i in range(50,80):
+    with open("cmd_4.sh", 'w') as f:
+        for i in range(60,80):
             f.write("CUDA_VISIBLE_DEVICES=NONE python pathfinder.py %s %d &\n" % (PATH, i))
         f.write('wait')
 
-    with open("cmd_molly.sh", 'w') as f:
+    with open("cmd_5.sh", 'w') as f:
         for i in range(80,100):
             f.write("CUDA_VISIBLE_DEVICES=NONE python pathfinder.py %s %d &\n" % (PATH, i))
         f.write('wait')
