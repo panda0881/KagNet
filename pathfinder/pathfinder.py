@@ -166,9 +166,9 @@ load_cpnet()
 # find_paths("write", "fountain_pen", ifprint=True)
 # print("--------")
 # find_paths("write", "pen", ifprint=True)
-find_paths("bottle", "liquor", ifprint=True)
+# find_paths("bottle", "liquor", ifprint=True)
 
 print();print();print();print();print();
 
 
-find_paths("cashier", "store", ifprint=True)
+# find_paths("cashier", "store", ifprint=True)
