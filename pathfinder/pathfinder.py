@@ -152,6 +152,7 @@ def process(filename, batch_id=-1):
             pf.append(pfr_qa)
 
     with open(output_path, 'w') as fi:
+        print('output to:', output_path)
         json.dump(pf, fi)
  
 
