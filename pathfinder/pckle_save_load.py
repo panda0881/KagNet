@@ -2,7 +2,7 @@ import timeit
 import json
 import pickle
 
-fname = '../datasets/csqa_new/train_rand_split.jsonl.statements.mcp.pf'
+fname = '../datasets/csqa_new/dev_rand_split.jsonl.statements.mcp.pf'
 #
 start_time = timeit.default_timer()
 print("loading paths from %s" % fname)
