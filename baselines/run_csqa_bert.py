@@ -648,7 +648,7 @@ def main():
     if args.do_train:
         ori_train_examples = read_csqa_examples(os.path.join(args.data_dir, 'train_rand_split.jsonl'))
         ori_dev_examples = read_csqa_examples(os.path.join(args.data_dir, 'dev_rand_split.jsonl'))
-        ori_test_examples = read_csqa_examples(os.path.join(args.data_dir, 'train2_rand_split.jsonl'))
+        # ori_test_examples = read_csqa_examples(os.path.join(args.data_dir, 'train2_rand_split.jsonl'))
 
         if args.inhouse:
             train_examples = ori_train_examples[0:850]  #8500
