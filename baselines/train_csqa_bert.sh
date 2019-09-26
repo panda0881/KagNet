@@ -8,8 +8,8 @@ python run_csqa_bert.py \
      --do_lower_case \
      --do_eval \
      --data_dir $CSQA_DIR \
-     --train_batch_size 60 \
-     --eval_batch_size 60 \
+     --train_batch_size 30 \
+     --eval_batch_size 30 \
      --learning_rate 1e-4 \
      --num_train_epochs 100.0 \
      --max_seq_length 100 \
