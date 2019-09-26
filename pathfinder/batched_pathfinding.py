@@ -1,5 +1,5 @@
 import sys
-import json
+import ujson as json
 import random
 
 path_csqa_train = "../datasets/csqa_new/train_rand_split.jsonl.statements"
