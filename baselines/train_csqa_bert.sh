@@ -2,7 +2,7 @@
 
 export CSQA_DIR=../datasets/csqa_new
 
-CUDA_VISIBLE_DEVICEs = 0 python run_csqa_bert.py \
+CUDA_VISIBLE_DEVICES = 0 python run_csqa_bert.py \
      --bert_model bert-large-uncased \
      --do_train \
      --do_lower_case \
