@@ -60,7 +60,7 @@ def generate_bash():
 def combine():
     final_json = []
     PATH = sys.argv[2]
-    for i in tqdm(NUM_BATCHES):
+    for i in tqdm(range(NUM_BATCHES)):
         with open(PATH + ".%d.pf"%i) as fp:
             tmp_list = json.load(fp)
         final_json += tmp_list
