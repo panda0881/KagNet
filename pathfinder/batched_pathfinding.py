@@ -1,6 +1,7 @@
 import sys
 import ujson as json
 import random
+from tqdm import tqdm
 
 path_csqa_train = "../datasets/csqa_new/train_rand_split.jsonl.statements"
 path_csqa_dev = "../datasets/csqa_new/dev_rand_split.jsonl.statements"
@@ -59,7 +60,7 @@ def generate_bash():
 def combine():
     final_json = []
     PATH = sys.argv[2]
-    for i in range(NUM_BATCHES):
+    for i in tqdm(NUM_BATCHES):
         with open(PATH + ".%d.pf"%i) as fp:
             tmp_list = json.load(fp)
         final_json += tmp_list
