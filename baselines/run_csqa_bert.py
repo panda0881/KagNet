@@ -671,8 +671,7 @@ def main():
     model = BertForMultipleChoice.from_pretrained(args.bert_model,
                                                   cache_dir=os.path.join(PYTORCH_PRETRAINED_BERT_CACHE,
                                                                          'distributed_{}'.format(args.local_rank)),
-                                                  num_choices=5,
-                                                  mlp_dropout=args.mlp_dropout)
+                                                  num_choices=5)
 
 
     if args.fp16:
