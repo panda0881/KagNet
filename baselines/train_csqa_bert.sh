@@ -11,7 +11,7 @@ python run_csqa_bert.py \
      --train_batch_size 15 \
      --eval_batch_size 15 \
      --learning_rate 1e-4 \
-     --num_train_epochs 10 \
+     --num_train_epochs 100 \
      --max_seq_length 100 \
      --output_dir ./models/ \
      --save_model_name bert_large_1e-4 \
