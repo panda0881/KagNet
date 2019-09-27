@@ -841,7 +841,7 @@ def main():
         output_model_file = os.path.join(args.output_dir, args.save_model_name + ".bin.%d"%(args.epoch_suffix))
         output_config_file = os.path.join(args.output_dir, args.save_model_name + ".config")
         config = BertConfig(output_config_file)
-        model = BertForMultipleChoice(config, num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
+        model = BertForMultipleChoice(config, num_choices=5)
 
         model.load_state_dict(torch.load(output_model_file))
         model.to(device)
