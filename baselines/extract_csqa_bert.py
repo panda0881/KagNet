@@ -16,7 +16,7 @@ from tqdm import tqdm, trange
 
 sys.path.append("./pytorch-pretrained-BERT")
 from pytorch_pretrained_bert.file_utils import PYTORCH_PRETRAINED_BERT_CACHE
-from pytorch_pretrained_bert.modeling import BertForMultipleChoice, BertForMultipleChoiceExtraction, WEIGHTS_NAME, CONFIG_NAME, BertConfig
+from pytorch_pretrained_bert.modeling import BertForMultipleChoice, WEIGHTS_NAME, CONFIG_NAME, BertConfig
 from pytorch_pretrained_bert.optimization import BertAdam, warmup_linear
 from pytorch_pretrained_bert.tokenization import BertTokenizer
 
@@ -476,7 +476,7 @@ def main():
             num_train_optimization_steps = num_train_optimization_steps // torch.distributed.get_world_size()
 
     # Prepare model
-    model = BertForMultipleChoiceExtraction.from_pretrained(args.bert_model,
+    model = BertForMultipleChoice.from_pretrained(args.bert_model,
         cache_dir=os.path.join(PYTORCH_PRETRAINED_BERT_CACHE, 'distributed_{}'.format(args.local_rank)),
         num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
     if args.fp16:
@@ -535,7 +535,7 @@ def main():
         output_model_file = os.path.join(args.output_dir, args.save_model_name + ".bin.%d"%(args.epoch_id))
         output_config_file = os.path.join(args.output_dir, args.save_model_name + ".config")
         config = BertConfig(output_config_file)
-        model = BertForMultipleChoiceExtraction(config, num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
+        model = BertForMultipleChoice(config, num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
         model.load_state_dict(torch.load(output_model_file))
         model.to(device)
         # to extract dev_rand_split.jsonl 'dev_rand_split.jsonl'
