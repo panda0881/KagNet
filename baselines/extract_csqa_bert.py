@@ -478,7 +478,7 @@ def main():
     # Prepare model
     model = BertForMultipleChoice.from_pretrained(args.bert_model,
         cache_dir=os.path.join(PYTORCH_PRETRAINED_BERT_CACHE, 'distributed_{}'.format(args.local_rank)),
-        num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
+        num_choices=5)
     if args.fp16:
         model.half()
     model.to(device)
@@ -535,7 +535,7 @@ def main():
         output_model_file = os.path.join(args.output_dir, args.save_model_name + ".bin.%d"%(args.epoch_id))
         output_config_file = os.path.join(args.output_dir, args.save_model_name + ".config")
         config = BertConfig(output_config_file)
-        model = BertForMultipleChoice(config, num_choices=5, mlp_hidden_dim=args.mlp_hidden_dim, mlp_dropout=args.mlp_dropout)
+        model = BertForMultipleChoice(config, num_choices=5)
         model.load_state_dict(torch.load(output_model_file))
         model.to(device)
         # to extract dev_rand_split.jsonl 'dev_rand_split.jsonl'
